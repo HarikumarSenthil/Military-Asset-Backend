@@ -1,0 +1,68 @@
+{
+    "popular_repos": [
+      {
+        "name": "Snailclimb",
+        "id": 132464395,
+        "issues_count": 60,
+        "forks_count": 45439,
+        "stars_count": 145321,
+        "avatar_url": "https://avatars.githubusercontent.com/u/29880145?v=4"
+      },
+      {
+        "name": "GrowingGit",
+        "id": 206462776,
+        "issues_count": 185,
+        "forks_count": 12872,
+        "stars_count": 96936,
+        "avatar_url": "https://avatars.githubusercontent.com/u/21018904?v=4"
+      },
+      {
+        "name": "krahets",
+        "id": 561730219,
+        "issues_count": 19,
+        "forks_count": 11562,
+        "stars_count": 91765,
+        "avatar_url": "https://avatars.githubusercontent.com/u/26993056?v=4"
+      },
+      {
+        "name": "iluwatar",
+        "id": 22790488,
+        "issues_count": 142,
+        "forks_count": 26331,
+        "stars_count": 88956,
+        "avatar_url": "https://avatars.githubusercontent.com/u/582346?v=4"
+      },
+      {
+        "name": "macrozheng",
+        "id": 127988011,
+        "issues_count": 31,
+        "forks_count": 28618,
+        "stars_count": 76883,
+        "avatar_url": "https://avatars.githubusercontent.com/u/15903809?v=4"
+      },
+      {
+        "name": "doocs",
+        "id": 151834062,
+        "issues_count": 5,
+        "forks_count": 18978,
+        "stars_count": 75379,
+        "avatar_url": "https://avatars.githubusercontent.com/u/43716716?v=4"
+      },
+      {
+        "name": "MisterBooo",
+        "id": 160640094,
+        "issues_count": 18,
+        "forks_count": 13963,
+        "stars_count": 75225,
+        "avatar_url": "https://avatars.githubusercontent.com/u/15308811?v=4"
+      },
+      {
+        "name": "spring-projects",
+        "id": 6296790,
+        "issues_count": 571,
+        "forks_count": 40421,
+        "stars_count": 74014,
+        "avatar_url": "https://avatars.githubusercontent.com/u/317776?v=4"
+      }
+    ]
+  }
