@@ -18,11 +18,8 @@ const initializeDBAndServer = async () => {
       filename: dbpath,
       driver: sqlite3.Database,
     });
-    app.listen(4000, () => {
+    app.listen(3000, () => {
       console.log('Server is running on port 4000');
-      console.log("Cors is there!!....");
-      console.log('Loaded environment variables:');
-      console.log('ACCESS_TOKEN:', process.env.ACCESS_TOKEN);
     });
   } catch (e) {
     console.log(`DB Error: ${e.message}`);
