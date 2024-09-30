@@ -19,7 +19,7 @@ const initializeDBAndServer = async () => {
       driver: sqlite3.Database,
     });
     app.listen(3000, () => {
-      console.log('Server is running on port 4000');
+      console.log('Server is running on port 3000');
     });
   } catch (e) {
     console.log(`DB Error: ${e.message}`);
@@ -86,6 +86,14 @@ app.post("/register", async (request, response) => {
 });
 
 
-app.get("/programData", async(request,response)=>{
-  response.send(data.json())
+app.get("/users",async (request,response)=>{
+  const getDataQuery = `
+  SELECT *
+  FROM 
+  users
+  `
+  const responseQuery = await db.all(getDataQuery)
+  response.send(responseQuery)
 })
+
+
