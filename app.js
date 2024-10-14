@@ -33,7 +33,7 @@ app.post("/login", async (request, response) => {
   const { username, password } = request.body;
 
   try {
-    const loginQuery = 'SELECT * FROM users WHERE username = ?';
+    const loginQuery = 'SELECT * FROM agent WHERE username = ?';
     const dbresponse = await db.get(loginQuery, [username]);
 
     if (dbresponse === undefined) {
