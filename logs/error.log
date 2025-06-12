@@ -1,0 +1,46 @@
+[2025-06-12 11:11:59] ERROR: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: users.email
+[2025-06-12 11:12:11] ERROR: Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\sign.js:111:20)
+    at generateToken (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:9:14)
+    at register (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:30:19)
+[2025-06-12 11:13:38] ERROR: Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\sign.js:111:20)
+    at generateToken (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:9:14)
+    at register (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:30:19)
+[2025-06-12 11:15:53] ERROR: Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\sign.js:111:20)
+    at generateToken (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:9:14)
+    at login (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:70:19)
+[2025-06-12 11:17:13] ERROR: Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\sign.js:111:20)
+    at generateToken (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:9:14)
+    at login (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:70:19)
+[2025-06-12 11:18:00] ERROR: Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\sign.js:111:20)
+    at generateToken (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:9:14)
+    at register (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:30:19)
+[2025-06-12 11:21:41] ERROR: SyntaxError: Expected double-quoted property name in JSON at position 57
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[2025-06-12 11:25:12] ERROR: Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\sign.js:111:20)
+    at generateToken (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:9:14)
+    at login (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:70:19)
+[2025-06-12 12:30:21] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-12 12:30:30] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-12 12:55:03] ERROR: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: purchases.quantity
+[2025-06-12 12:58:58] ERROR: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: purchases.quantity
+[2025-06-12 13:00:31] ERROR: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: purchases.quantity
+[2025-06-12 16:00:09] ERROR: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: purchases.quantity
+[2025-06-12 16:01:27] ERROR: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: purchases.quantity
+[2025-06-12 16:01:55] ERROR: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: purchases.quantity
+[2025-06-12 16:06:38] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-12 16:07:04] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
