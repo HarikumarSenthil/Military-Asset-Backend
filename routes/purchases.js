@@ -2,7 +2,7 @@ const express = require('express');
 const { body } = require('express-validator');
 const purchaseController = require('../controllers/purchaseController');
 const { authenticateToken } = require('../middleware/authorization');
-const { checkRole, checkBaseAccess } = require('../middleware/RBAC');
+const { checkRole, checkBaseAccess } = require('../middleware/rbac');
 
 const router = express.Router();
 

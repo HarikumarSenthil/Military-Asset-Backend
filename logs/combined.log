@@ -3388,3 +3388,5 @@
 [2025-06-13 17:36:45] INFO: GET /api/assets/metrics/dashboard - ::1
 [2025-06-13 17:36:45] INFO: GET /api/assets/metrics/dashboard - ::1
 [2025-06-13 17:36:45] INFO: GET /api/assets/metrics/dashboard - ::1
+[2025-06-13 17:51:11] INFO: Connected to SQLite database
+[2025-06-13 17:51:11] INFO: Server running on port 5000
