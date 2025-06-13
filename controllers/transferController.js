@@ -20,7 +20,7 @@ const createTransfer = async (req, res) => {
 
     logger.info(`Transfer initiated: ${transfer.transfer_id} by ${req.user.username}`);
 
-    // ✅ Audit log for transfer creation
+   
     await recordAudit({
       req,
       action: 'Transfer Created',
@@ -95,7 +95,7 @@ const updateTransferStatus = async (req, res) => {
 
     logger.info(`Transfer ${transferId} marked as ${status} by ${req.user.username}`);
 
-    // ✅ Audit log for status update
+   
     await recordAudit({
       req,
       action: `Transfer Status Updated to ${status}`,

@@ -1,17 +1,19 @@
 const express = require('express');
 const { body } = require('express-validator');
 const auditLogController = require('../controllers/auditLogController');
-const { authenticateToken } = require('../middleware/auth');
+const { authenticateToken } = require('../middleware/authorization');
+const { checkRole } = require('../middleware/RBAC');
 
 const router = express.Router();
 
-// GET /api/audit-logs
-router.get('/', authenticateToken, auditLogController.getAllAuditLogs);
+// Only Admins or Auditors can view audit logs
+router.get('/', authenticateToken, checkRole(['Admin', 'Auditor']), auditLogController.getAllAuditLogs);
 
-// POST /api/audit-logs (optional, only if you want to create logs manually)
+// (Optional) Only Admins can create logs manually
 router.post(
   '/',
   authenticateToken,
+  checkRole(['Admin']),
   [
     body('action').notEmpty().withMessage('Action is required'),
     body('details').optional(),

@@ -1,5 +1,5 @@
 // CONTROLLERS/ASSETCONTROLLER.JS
-// ========================================
+
 const Asset = require('../models/Asset');
 const { validationResult } = require('express-validator');
 const { logger } = require('../utils/helpers');
@@ -17,7 +17,7 @@ const createAsset = async (req, res) => {
 
     logger.info(`New asset created: ${asset.asset_id} by ${req.user.username}`);
 
-    // ✅ Audit log
+
     await recordAudit({
       req,
       action: 'Asset Created',
@@ -111,7 +111,6 @@ const updateAssetBalance = async (req, res) => {
 
     logger.info(`Asset balance updated for ${assetId} to ${balance}`);
 
-    // ✅ Audit log
     await recordAudit({
       req,
       action: 'Asset Balance Updated',

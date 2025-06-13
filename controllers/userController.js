@@ -117,7 +117,7 @@ const assignBase = async (req, res) => {
     
     logger.info(`Base ${base.base_name} assigned to user ${user.username}`);
 
-    // ✅ Audit log
+   
     await recordAudit({
       req,
       action: 'Base Assigned',
@@ -153,7 +153,7 @@ const createUser = async (req, res) => {
     
     logger.info(`New user created: ${username} by ${req.user.username}`);
 
-    // ✅ Audit log
+   
     await recordAudit({
       req,
       action: 'User Created',

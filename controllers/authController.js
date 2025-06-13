@@ -4,11 +4,20 @@ const { validationResult } = require('express-validator');
 const { logger } = require('../utils/helpers');
 const { recordAudit } = require('../utils/auditHelper');
 
-const generateToken = (userId) => {
-  return jwt.sign({ userId }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE || '7d'
-  });
+const generateToken = ({ user_id, username, roles }) => {
+  return jwt.sign(
+    {
+      userId: user_id,
+      username,
+      roles, 
+    },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: process.env.JWT_EXPIRE || '7d',
+    }
+  );
 };
+
 
 const register = async (req, res) => {
   try {
@@ -18,7 +27,6 @@ const register = async (req, res) => {
     }
 
     const { username, password, email, full_name } = req.body;
-
     // Check if user already exists
     const existingUser = await User.findByUsername(username);
     if (existingUser) {
@@ -30,7 +38,6 @@ const register = async (req, res) => {
 
     logger.info(`New user registered: ${username}`);
 
-    // ✅ Audit log
     await recordAudit({
       req,
       action: 'User Registration',
@@ -65,8 +72,8 @@ const login = async (req, res) => {
     }
 
     const { username, password } = req.body;
-
     const user = await User.findByUsername(username);
+
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
@@ -77,32 +84,46 @@ const login = async (req, res) => {
     }
 
     const userWithRoles = await User.findById(user.user_id);
-    const token = generateToken(user.user_id);
+    const roles = userWithRoles.roles ? userWithRoles.roles.split(',') : [];
+
+    // Pass roles into the token
+    const token = generateToken({
+      user_id: user.user_id,
+      username: user.username,
+      roles,
+    });
 
     logger.info(`User logged in: ${username}`);
 
-    // ✅ Audit log
     await recordAudit({
       req,
       action: 'User Login',
       details: {
         user_id: user.user_id,
-        username: user.username
-      }
+        username: user.username,
+      },
     });
 
-    res.json({
-      message: 'Login successful',
-      token,
-      user: {
-        user_id: userWithRoles.user_id,
-        username: userWithRoles.username,
-        email: userWithRoles.email,
-        full_name: userWithRoles.full_name,
-        roles: userWithRoles.roles ? userWithRoles.roles.split(',') : [],
-        bases: userWithRoles.bases ? userWithRoles.bases.split(',') : []
-      }
-    });
+    // Send token in cookie and JSON response
+    res
+      .cookie('token', token, {
+        httpOnly: true,
+        sameSite: 'Lax',
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+      })
+      .json({
+        message: 'Login successful',
+        token, // also send token in body if frontend wants to store it
+        user: {
+          user_id: user.user_id,
+          username: user.username,
+          email: user.email,
+          full_name: user.full_name,
+          roles,
+          bases: userWithRoles.bases ? userWithRoles.bases.split(',') : [],
+        },
+      });
   } catch (error) {
     logger.error('Login error:', error);
     res.status(500).json({ message: 'Login failed', error: error.message });

@@ -1,8 +1,8 @@
 const express = require('express');
 const { body } = require('express-validator');
 const purchaseController = require('../controllers/purchaseController');
-const { authenticateToken } = require('../middleware/auth');
-
+const { authenticateToken } = require('../middleware/authorization');
+const { checkRole, checkBaseAccess } = require('../middleware/RBAC');
 
 const router = express.Router();
 
@@ -11,6 +11,8 @@ const router = express.Router();
 router.post(
   '/',
   authenticateToken,
+  checkRole(['Admin', 'Logistics Officer']), 
+  checkBaseAccess, 
   [
     body('asset_id').notEmpty().withMessage('Asset ID is required'),
     body('quantity_purchased').isInt({ min: 1 }).withMessage('Quantity must be at least 1'),
@@ -22,11 +24,20 @@ router.post(
 );
 
 // Route: GET /api/purchases
-// Description: Get all purchases (with optional filters)
-router.get('/', authenticateToken, purchaseController.getAllPurchases);
+
+router.get(
+  '/',
+  authenticateToken,
+  checkBaseAccess, 
+  purchaseController.getAllPurchases
+);
 
 // Route: GET /api/purchases/:purchaseId
-// Description: Get a single purchase by ID
-router.get('/:purchaseId', authenticateToken, purchaseController.getPurchaseById);
+
+router.get(
+  '/:purchaseId',
+  authenticateToken,
+  purchaseController.getPurchaseById 
+);
 
 module.exports = router;

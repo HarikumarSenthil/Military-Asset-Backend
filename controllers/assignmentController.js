@@ -20,7 +20,7 @@ const createAssignment = async (req, res) => {
 
     logger.info(`Asset assigned: ${assignment.assignment_id} to user ${assignment.assigned_to_user_id}`);
 
-    // ✅ Audit log
+
     await recordAudit({
       req,
       action: 'Asset Assigned',
@@ -91,7 +91,6 @@ const returnAssignedAsset = async (req, res) => {
 
     logger.info(`Asset returned for assignment ID: ${assignmentId}`);
 
-    // ✅ Audit log
     await recordAudit({
       req,
       action: 'Asset Returned',

@@ -1,7 +1,6 @@
 // MIDDLEWARE/RBAC.JS
 // ========================================
 const Base = require('../models/Base');
-const AuditLog = require('../models/AuditLog');
 
 const checkRole = (allowedRoles) => {
   return (req, res, next) => {
@@ -51,32 +50,5 @@ const checkBaseAccess = async (req, res, next) => {
   }
 };
 
-const auditLog = (action) => {
-  return async (req, res, next) => {
-    const originalSend = res.send;
-    
-    res.send = function(data) {
-      // Log the action after response is sent
-      if (res.statusCode < 400) {
-        AuditLog.create({
-          user_id: req.user?.user_id,
-          action,
-          details: {
-            method: req.method,
-            path: req.path,
-            params: req.params,
-            body: req.body
-          },
-          ip_address: req.ip,
-          status: 'Success'
-        }).catch(err => console.error('Audit log error:', err));
-      }
-      
-      originalSend.call(this, data);
-    };
-    
-    next();
-  };
-};
 
-module.exports = { checkRole, checkBaseAccess, auditLog };
+module.exports = { checkRole, checkBaseAccess,};

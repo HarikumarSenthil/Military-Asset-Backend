@@ -20,7 +20,7 @@ const createExpenditure = async (req, res) => {
 
     logger.info(`Expenditure recorded: ${expenditure.expenditure_id} for asset ${expenditure.asset_id}`);
 
-    // ✅ Audit log
+
     await recordAudit({
       req,
       action: 'Expenditure Created',

@@ -16,19 +16,24 @@ const transferRoutes = require('./routes/transfers');
 const assignmentRoutes = require('./routes/assignments');
 const expenditureRoutes = require('./routes/expenditures');
 const auditRoutes = require("./routes/auditLogs")
+const baseRoutes = require('./routes/base');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100 // limit each IP to 100 requests per windowMs
+  windowMs: 1 * 60 * 1000, // 15 minutes
+  max: 200 // limit each IP to 100 requests per windowMs
 });
 
 // Middleware
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,             
+}));
+
 app.use(limiter);
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -42,6 +47,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/bases', baseRoutes);
 app.use('/api/assets', assetRoutes);
 app.use('/api/purchases', purchaseRoutes);
 app.use('/api/transfers', transferRoutes);

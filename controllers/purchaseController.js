@@ -27,7 +27,6 @@ const createPurchase = async (req, res) => {
 
     logger.info(`Purchase created: ${purchase.purchase_id} by user ${req.user.username}`);
 
-    // ✅ Audit log
     await recordAudit({
       req,
       action: 'Purchase Created',

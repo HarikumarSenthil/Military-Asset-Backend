@@ -44,3 +44,49 @@
 [2025-06-12 16:01:55] ERROR: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: purchases.quantity
 [2025-06-12 16:06:38] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
 [2025-06-12 16:07:04] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-12 21:59:32] ERROR: Error: Illegal arguments: undefined, number
+    at _async (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\bcryptjs\umd\index.js:233:15)
+    at C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\bcryptjs\umd\index.js:245:11
+    at new Promise (<anonymous>)
+    at Object.hash (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\bcryptjs\umd\index.js:244:16)
+    at User.create (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\models\User.js:9:41)
+    at register (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\controllers\authController.js:27:29)
+[2025-06-13 11:23:44] ERROR: JsonWebTokenError: invalid signature
+    at C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\verify.js:171:19
+    at getSecret (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\verify.js:97:14)
+    at module.exports [as verify] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\verify.js:101:10)
+    at authenticateToken (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\middleware\authorization.js:16:25)
+    at Layer.handle [as handle_request] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\index.js:346:12)
+[2025-06-13 15:31:28] ERROR: JsonWebTokenError: invalid signature
+    at C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\verify.js:171:19
+    at getSecret (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\verify.js:97:14)
+    at module.exports [as verify] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\jsonwebtoken\verify.js:101:10)
+    at authenticateToken (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\middleware\authorization.js:16:25)
+    at Layer.handle [as handle_request] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\express\lib\router\index.js:346:12)
+[2025-06-13 17:11:33] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-13 17:25:38] ERROR: SyntaxError: Unterminated fractional number in JSON at position 75
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+    at invokeCallback (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\HARIKUMARSRTC2021BEC\Desktop\Military Asset Management System\Backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+[2025-06-13 17:27:40] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-13 17:27:48] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-13 17:28:18] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-13 17:32:55] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
+[2025-06-13 17:34:10] ERROR: Error: SQLITE_CONSTRAINT: FOREIGN KEY constraint failed
